@@ -43,6 +43,18 @@ dob.addEventListener("change", (e) => {
       var agediff = getdiff(dobIns);
       console.log(agediff);
       diff.innerText = `${agediff[0]} years ${agediff[1]} months ${agediff[2]} days`;
+     
+      localStorage.setItem("dobLast" , dob.value)
   }
 
 });
+
+if (localStorage.getItem("dobLast") != '') {
+
+    dob.value = localStorage.getItem("dobLast")
+    let dobIns = localStorage.getItem("dobLast").split("-");
+      let agediff = getdiff(dobIns);
+      console.log(agediff);
+      diff.innerText = `${agediff[0]} years ${agediff[1]} months ${agediff[2]} days`;
+      
+}
