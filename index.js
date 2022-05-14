@@ -1,9 +1,11 @@
+const dateOfB = [2003, 2, 25];
+
+
 var date = new Date();
 var today = [date.getFullYear(), date.getMonth() + 1, date.getUTCDate()];
 
-const dateOfB = [2001, 7, 29];
 const getTotalDays = () => {
-  return 30;
+    return 30;
 };
 
 const getdiff = (dob) => {
@@ -23,16 +25,9 @@ const getdiff = (dob) => {
     diff[2] = getTotalDays() - Math.abs(today[2] - dob[2]);
   }
 
-  return diff
+  return diff;
 };
 
+const agediff = getdiff(dateOfB);
 
-const agediff = getdiff(dateOfB)
-
-console.table(agediff)
-
-
-
-
-
-
+console.table(agediff);
